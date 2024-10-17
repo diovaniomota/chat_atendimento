@@ -1,5 +1,6 @@
 import 'package:chat_atendimento/components/my_button.dart';
 import 'package:chat_atendimento/components/my_text_field.dart';
+import 'package:chat_atendimento/pages/chat_list_page.dart';
 import 'package:chat_atendimento/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -76,7 +77,15 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 25),
 
                 // Create account button
-                MyButton(onTap: () {}, text: 'Criar conta'),
+                MyButton(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChatlistPage()),
+                      );
+                    },
+                    text: 'Criar conta'),
 
                 const SizedBox(height: 50),
 
