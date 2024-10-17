@@ -1,5 +1,6 @@
 import 'package:chat_atendimento/components/my_button.dart';
 import 'package:chat_atendimento/components/my_text_field.dart';
+import 'package:chat_atendimento/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -35,7 +36,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 50),
 
-                // Welcome back message
+                // Welcome message
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25),
                   child: Center(
@@ -66,8 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 10),
 
-                //confirm password
-
+                // Confirm password
                 MyTextField(
                     controller: passwordController,
                     hintText: 'Confirmar Senha',
@@ -75,24 +75,35 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 25),
 
-                // Sign in button
+                // Create account button
                 MyButton(onTap: () {}, text: 'Criar conta'),
 
                 const SizedBox(height: 50),
 
-                // Not a member? Register now
-                const Row(
+                // Already a member? Login now
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Ja é um membro?',
+                    const Text(
+                      'Já é um membro?',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(width: 4),
-                    Text(
-                      'Fazer Login',
-                      style: TextStyle(
-                          color: Colors.purple, fontWeight: FontWeight.bold),
+                    const SizedBox(width: 4),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginPage()),
+                        );
+                      },
+                      child: const Text(
+                        'Fazer Login',
+                        style: TextStyle(
+                          color: Colors.purple,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 )
