@@ -1,6 +1,6 @@
 import 'package:chat_atendimento/components/my_button.dart';
 import 'package:chat_atendimento/components/my_text_field.dart';
-import 'package:chat_atendimento/pages/chat_list_page.dart';
+import 'package:chat_atendimento/components/chat_list_component.dart';
 import 'package:chat_atendimento/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
